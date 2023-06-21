@@ -9,7 +9,7 @@ public class Parser
         Uri = uri;
     }
 
-    public void RunParsing()
+    public IList<ProductModel> RunParsing()
     {
         Console.WriteLine("\n---Insert please count of searching products(min 60)---");
         int count = Convert.ToInt32(Console.ReadLine());
@@ -31,10 +31,6 @@ public class Parser
         {
             products = category.GetProducts(selectedSubCategory);
         }
-        var result = new ExportResult();
-        result.ConvertToCsv(products);
-        result.ConvertToJson(products, Environment.CurrentDirectory + "\\results\\result.json");
-        Console.Clear();
-        Console.WriteLine("See your result in folder 'results' in root folder");
+        return products;
     }
 }

@@ -9,23 +9,26 @@ public class ExportResult
 {
     private readonly JsonSerializerOptions _options =
        new() { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
+    private readonly static string _name = DateTime.Now.ToString("ff");
+    private readonly string _jsonFormat = Environment.CurrentDirectory + $"\\results\\{_name}.json";
+    private readonly string _csvFormat = Environment.CurrentDirectory + $"\\results\\{_name}.csv";
 
-    public void ConvertToCsv(IList<ProductModel> products)
+    public void SaveToCsv(IList<ProductModel> products)
     {
-        using (var writer = new StreamWriter(Environment.CurrentDirectory + "\\results\\result.csv"))
+        using (var writer = new StreamWriter(_csvFormat))
         using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
         {
             csv.WriteRecords(products);
         }
     }
 
-    public  void ConvertToJson(object obj, string fileName)
+    public  void SaveToJson(object obj)
     {
-        var options = new JsonSerializerOptions(_options)
-        {
-            WriteIndented = true
-        };
-        var jsonString = JsonSerializer.Serialize(obj, options);
-        File.WriteAllText(fileName, jsonString);
+        //var options = new JsonSerializerOptions(_options)
+        //{
+        //    WriteIndented = true
+        //};
+        var jsonString = JsonSerializer.Serialize(obj);
+        File.WriteAllText(_jsonFormat, jsonString);
     }
 }

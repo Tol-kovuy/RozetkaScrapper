@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UskWNMOc8Pl4x2nE/dNagHDFAjSOUBuP2LAnSxJkdS6Ic2314wzbOt49UYYFCVkWGzjKhJQvytTSgrPdXfcY1Q==",
+  "dgSpecHash": "wkXwsQr9sTATEu/kikOUILhu2Vb/HlKsa3dE8et+j1SjzOWoH0FGROfh9ZQUmbu7HA+eklw3JIWpXfXPZTdBww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Maxim\\Source\\Repos\\RozetkaScrapper\\RozetkaScrapper.csproj",
+  "projectFilePath": "C:\\Users\\Maxim\\source\\repos\\RozetkaScrapper\\RozetkaScrapper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Maxim\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\Maxim\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
